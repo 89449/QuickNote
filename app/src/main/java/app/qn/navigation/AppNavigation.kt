@@ -27,7 +27,7 @@ fun AppNavigation(viewModel: NoteViewModel) {
 			route = "home"
 		) {
 			Home(
-				viewmodel = viewmodel,
+				viewModel = viewModel,
 				onTitleClick = { noteId ->
 					navController.navigate("detail/$noteId")
 				},

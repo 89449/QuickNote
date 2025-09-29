@@ -34,6 +34,7 @@ import app.qn.viewmodel.NoteViewModel
 @Composable
 fun Detail(
     viewModel: NoteViewModel,
+    noteId: Int,
     onBack: () -> Unit
 ) {
     LaunchedEffect(noteId) {
