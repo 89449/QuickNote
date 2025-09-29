@@ -10,6 +10,8 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.stateIn
 
 // State for the Detail Screen (editing a single note)
 data class NoteUiState(
@@ -24,8 +26,11 @@ class NoteViewModel(private val dao: NoteDao) : ViewModel() {
 
     // Home Screen State (List of all notes)
     val allNotes: StateFlow<List<Note>> = dao.getAllNotes()
-        // Flows are automatically collected in the background
-        .asStateFlow()
+    .stateIn(
+        scope = viewModelScope,
+        started = SharingStarted.WhileSubscribed(5000L),
+        initialValue = emptyList()
+    )
 
     // Detail Screen State (State for the note being edited/created)
     private val _uiState = MutableStateFlow(NoteUiState())
