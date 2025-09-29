@@ -57,7 +57,7 @@ fun Home(
                         .clickable { onTitleClick(note.id) }
                 ) {
                     Text(
-                        text = text = note.title.ifEmpty { "(No Title)" },
+                        text = note.title.ifEmpty { "(No Title)" },
                         modifier = Modifier.padding(16.dp)
                     )
                 }
