@@ -14,7 +14,7 @@ import app.qn.ui.Detail
 import app.qn.viewmodel.NoteViewModel
 
 @Composable
-fun AppNavigation(viewmodel: NoteViewModel) {
+fun AppNavigation(viewModel: NoteViewModel) {
 	val navController = rememberNavController()
 
 	NavHost(
