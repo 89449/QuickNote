@@ -50,6 +50,7 @@ dependencies {
     implementation("androidx.activity:activity-compose:1.11.0")
     implementation("androidx.navigation:navigation-compose:2.9.0")
     implementation("androidx.compose.material:material-icons-core:1.7.8")
+    implementation("androidx.appcompat:appcompat:1.7.1")
     
     implementation("androidx.room:room-runtime:2.8.1")
 	implementation("androidx.room:room-ktx:2.8.1")
